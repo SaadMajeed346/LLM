@@ -7,10 +7,10 @@ from langchain_openai import ChatOpenAI
 import linkedin
 
 from agents.linkedIn_lookup_agent import lookup as linkedin_lookup_agent
-from output_parsers import summary_parser
+from output_parsers import summary_parser, Summary
 
 
-def agent_with(name: str) -> str:
+def agent_with(name: str) -> Summary:
     linkedin_username = linkedin_lookup_agent(name=name)
     linkedin_data = linkedin.scrape_linkedin_profile(
         linkedin_profile_url= linkedin_username,
