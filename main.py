@@ -16,7 +16,6 @@ def agent_with(name: str) -> Tuple[Summary, str]:
     linkedin_username = linkedin_lookup_agent(name=name)
     linkedin_data = linkedin.scrape_linkedin_profile(
         linkedin_profile_url= linkedin_username,
-        mock=True
     )
 
     summary_template = """
